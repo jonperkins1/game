@@ -16,3 +16,14 @@ var guessCountElement = document.getElementById("guess-count");
 //setup function that resets game 
 
 //create an array with all the possible band name choices
+
+var wordsArray = ["Nirvana", 
+                "Soundgarden", 
+                "Pearl Jam", 
+                "Stone Temple Pilots", 
+                "Smashing Pumpkins", 
+                "Alice in Chains", 
+                "Temple of the Dog", 
+                "Bush",
+                "Hole",
+                ];
