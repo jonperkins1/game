@@ -3,12 +3,23 @@ body {
     
 }
 
+h1 {
+    
+    text-align: center;
+    position: absolute;
+    margin-left: 50%;
+    margin-right: 50%;
+    font-family: impact;
+    color: whitesmoke;
+}
+
 #logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 35%;
-
+    floa
+    position: relative;
 }
 
 .container {
@@ -20,5 +31,7 @@ body {
     border-style: solid;
     border-color: whitesmoke;
     border-width: 2px;
+    float: none;
+    clear: both;
     
 }
