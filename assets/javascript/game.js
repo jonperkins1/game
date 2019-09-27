@@ -98,3 +98,14 @@ document.onkeydown = function(e) {
         if(randomWord.indexOf(theKey) === -1) {
             guessCount++;
         }
+
+guessesRemaining = maxAttempts - guessCount;
+
+        if(guessesRemaining === 0) {
+            clearWordAndGuesses();
+            randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].toLowerCase();
+        } else {
+            guessCountElement.innerHTML = guessesRemaining;
+        }
+
+    
