@@ -72,3 +72,29 @@ function renderWord() {
     }
     currentWordElement.innerHTML = html;
 }
+
+
+function clearWordAndGuesses() {
+    guessCountElement.innerHTML = maxAttempts;
+    guessCount = 0;
+    guessesRemaining = maxAttempts - guessCount;
+    allLettersGuessed = [];
+    lettersGuessedElement.innerHTML = "";
+}
+
+
+
+renderWord();
+winCountElement.innerHTML = winCount;
+guessCountElement.innerHTML = guessesRemaining;
+
+document.onkeydown = function(e) {
+    var theKey = e.key.toLowerCase();
+    var theKeyCode = e.keyCode;
+
+    if(theKeyCode >= 65 && theKeyCode <= 90 && allLettersGuessed.indexOf(theKey) === -1){
+        allLettersGuessed.push(theKey);
+
+        if(randomWord.indexOf(theKey) === -1) {
+            guessCount++;
+        }
