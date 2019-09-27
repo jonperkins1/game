@@ -88,6 +88,8 @@ renderWord();
 winCountElement.innerHTML = winCount;
 guessCountElement.innerHTML = guessesRemaining;
 
+//keystroke listener 
+
 document.onkeydown = function(e) {
     var theKey = e.key.toLowerCase();
     var theKeyCode = e.keyCode;
@@ -107,7 +109,7 @@ guessesRemaining = maxAttempts - guessCount;
         } else {
             guessCountElement.innerHTML = guessesRemaining;
         }
-
+// loop to setup when the user has guessed all the letters in the word
         var html = "";
         for(var i = 0; i < allLettersGuessed.length; i++) {
             if(randomWord.indexOf(allLettersGuessed[i]) === -1) {
@@ -115,3 +117,24 @@ guessesRemaining = maxAttempts - guessCount;
             }
         }
         lettersGuessedElement.innerHTML = html;
+
+        renderWord();
+
+        var renderedWord = document.getElementById("word").innerHTML;
+        if(renderedWord.indexOf("_") === -1) {
+            wordComplete = true;
+        }
+    }
+
+ //setup conditions upon win. alert victory. reset game, add to win count.   
+    if(wordComplete) {
+        alert("You won! The band is " + renderedWord + ". Click ok to play again.");
+        wordComplete = false;
+        winCount++;
+        winCountElement.innerHTML = winCount;
+        clearWordAndGuesses();
+        randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].toLowerCase();
+        renderWord();
+    }
+
+}
