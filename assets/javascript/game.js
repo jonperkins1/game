@@ -108,4 +108,10 @@ guessesRemaining = maxAttempts - guessCount;
             guessCountElement.innerHTML = guessesRemaining;
         }
 
-    
+        var html = "";
+        for(var i = 0; i < allLettersGuessed.length; i++) {
+            if(randomWord.indexOf(allLettersGuessed[i]) === -1) {
+                html += allLettersGuessed[i].toUpperCase();
+            }
+        }
+        lettersGuessedElement.innerHTML = html;
