@@ -58,3 +58,17 @@ var winCount = 0;
 //setup victory signifer
 
 var wordComplete = false;
+
+//setup function to generate a word
+
+function renderWord() {
+    var html = "";
+    for(var i = 0; i < randomWord.length; i++) {
+        if(allLettersGuessed.indexOf(randomWord[i]) !== -1 || randomWord[i] === " ") {
+            html += randomWord[i].toUpperCase();
+        } else {
+            html += "_";
+        }
+    }
+    currentWordElement.innerHTML = html;
+}
